@@ -12,6 +12,7 @@
 
 		var $imageList= $('img');
 console.log($imageList);
+
  
 
 
@@ -38,29 +39,25 @@ console.log($imageList);
 
 function searchforImage($result){
 
-		var searchList = [ ];
-
+		var $searchList = [ ];
 
 
 		for(var i = 0; i < $imageList.length; i++ ){
 
-			console.log($result);
-
 			var $altTag = $imageList[i].alt;
-
-			console.log($altTag);	
 
 			var n = $altTag.search($result);
 
 			//console.log(n);
 
+
 			if(n !== -1){
 
-				searchList.push($imageList[i]);
-
+				$searchList.push($imageList[i]);
+				console.log($searchList);
+				$searchList.hide();
 			}
 
-			console.log(searchList.length); 
 
 
 	}
