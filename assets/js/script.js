@@ -53,14 +53,13 @@ function searchforImage($result, searchList){
 
 			//console.log(n);
 
+			}
 
 			if(n !== -1){
 
 				searchList.push($imageList[i]);
 				console.log(searchList);
 				printImageList(searchList);
-
-			}
 
 
 
