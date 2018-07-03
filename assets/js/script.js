@@ -1,8 +1,11 @@
 
 //Type in word into search bar
-// all images should disappear
-//assign word to variable
-//search to see if the word is in the alt tag
+//search bar takes in value
+//hides all images
+//build gallery List
+//compare result item to each alt tag
+//if value matches put it in result list
+//print out new list into flex-container
 //if word is in alt tag  put it in a list 
 // hide all items
 // print out list
@@ -11,17 +14,19 @@
 //if index has word push it to a new list
 //output new list onto screen
 
-//var $imageList= $('img');
 //console.log($imageList);
 
  
 
 
  $('#search').on('keyup click', function(){
- 		var $result =  $('#search').val();
- 		 
+ 		var $result =  $('#search').val();	 
+		var searchList = [ ];
+
+
+
  		 if ($result !== ""){
- 		 	searchforImage($result);
+ 		 	searchforImage($result, searchList);
 
  		 	$(".flex-container a").hide();
  		 }
@@ -35,9 +40,9 @@
 
 
 
-function searchforImage($result){
+function searchforImage($result, searchList){
 
-		var searchList = [ ];
+		var $imageList= $('img');
 
 
 		for(var i = 0; i < $imageList.length; i++ ){
