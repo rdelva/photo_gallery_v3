@@ -1,5 +1,6 @@
 
-//Type in word you want to search
+//Type in word into search bar
+// all images should disappear
 //assign word to variable
 //search to see if the word is in the alt tag
 //if word is in alt tag  put it in a list 
@@ -10,8 +11,8 @@
 //if index has word push it to a new list
 //output new list onto screen
 
-		var $imageList= $('img');
-console.log($imageList);
+//var $imageList= $('img');
+//console.log($imageList);
 
  
 
@@ -21,6 +22,8 @@ console.log($imageList);
  		 
  		 if ($result !== ""){
  		 	searchforImage($result);
+
+ 		 	$(".flex-container a").hide();
  		 }
 
  		 else {
@@ -32,14 +35,9 @@ console.log($imageList);
 
 
 
-
- var $textbox = $('#search').val(); 
-
-
-
 function searchforImage($result){
 
-		var $searchList = [ ];
+		var searchList = [ ];
 
 
 		for(var i = 0; i < $imageList.length; i++ ){
@@ -53,15 +51,31 @@ function searchforImage($result){
 
 			if(n !== -1){
 
-				$searchList.push($imageList[i]);
-				console.log($searchList);
-				$searchList.hide();
+				searchList.push($imageList[i]);
+				console.log(searchList);
+				printImageList(searchList);
+
 			}
 
 
 
 	}
 
+
+}
+
+
+function printImageList(searchList){
+
+
+	for (var i=0; i <searchList.length; i++)
+	{
+
+		$(".flex-container").append('<img src="'+searchList[i].src+'">');
+	}
+
+
+	
 
 }
 
