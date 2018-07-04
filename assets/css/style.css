@@ -79,12 +79,26 @@ a:hover {
 	
 	}
 
-	.flex-container {
-
+	.gallery {
 		display: flex;
 		flex-wrap:wrap;
+
+	}
+
+
+	.flex-container {
+	
 		justify-content: space-between;
 	}
+
+
+
+	.flex-start {
+ 		/*justify-content: flex-start;*/
+		align-content: flex-start;
+	}
+
+	
 
 	#search {
 
