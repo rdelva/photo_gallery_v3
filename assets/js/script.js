@@ -9,38 +9,45 @@
 //if word is in alt tag  put it in a list 
 // hide all items
 // print out list
-//pull all items into a list
-//compare word to each item
-//if index has word push it to a new list
+//if no item is found dont hide list
 //output new list onto screen
 
-//console.log($imageList);
 
  
 
 
- $('#search').on('keyup click', function(){
+ $('#search').on('keyup', function(){
  		var $result =  $('#search').val();	 
-		var searchList = [ ];
 
-
+		$result= $.trim($result);
 
  		 if ($result !== ""){
- 		 	searchforImage($result, searchList);
+ 		 	searchforImage($result);
 
- 		 	$(".flex-container a").hide();
  		 }
 
  		 else {
 
  		 	console.log("The box is empty");
+ 		 	$(".gallery a").show();
+ 		 	$('.gallery').removeClass('flex-start');
+ 		 	$('.gallery').addClass('flex-container');
+
  		 }
 
  });
 
 
 
-function searchforImage($result, searchList){
+function searchforImage($result){
+
+		var searchList = [ ];
+		var itemFound = false;
+
+
+
+
+
 
 		var $imageList= $('img');
 
@@ -51,19 +58,43 @@ function searchforImage($result, searchList){
 
 			var n = $altTag.search($result);
 
-			//console.log(n);
+		
+			if(n > -1){ // found something
+				itemFound = true;
+				$(".gallery a").hide();
+					console.log("now" + searchList.length);
+
+
+					if(searchList.length !== 0 ) {
+						for (var i = 0; i < searchList.length; i++)
+						$imageList.remove()	
+						searchList.pop();
+
+					}
+
+
+			} else {
+
+					if(searchList.length !== 0 ) {
+						for (var i = 0; i < searchList.length; i++)
+						searchList.pop();
+
+					}
+
+				searchList.push($imageList[i]);
+				//console.log(searchList);
 
 			}
 
-			if(n !== -1){
-
-				searchList.push($imageList[i]);
-				console.log(searchList);
-				printImageList(searchList);
 
 
 
-	}
+		}// end of for loop to push images		
+		console.log("later" + searchList.length);
+
+
+		printImageList(searchList);
+
 
 
 }
@@ -72,20 +103,35 @@ function searchforImage($result, searchList){
 function printImageList(searchList){
 
 
-	for (var i=0; i <searchList.length; i++)
+		console.log("later2" + searchList.length);
+
+
+	for (var i=0; i < searchList.length; i++)
 	{
 
 		$(".flex-container").append('<img src="'+searchList[i].src+'">');
+
+
 	}
 
+		if(searchList.length < 4){
+					$('.gallery').removeClass('flex-container');
+					$('.gallery').addClass('flex-start');
+				}
+				else {
 
+					$('.gallery').addClass('flex-container');
+
+				}
 	
-
 }
 
 
 
 /*
+		
+
+
 if ($textbox !== "") {
 
 	console.log("hi");
