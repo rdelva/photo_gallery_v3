@@ -33,7 +33,7 @@ a {
 	display: inline-block;
 	margin-bottom:1em;
 	opacity:  .4;
-	transition-property; opacity;
+	transition-property: opacity;
 	transition-duration: 1s;
 }
 

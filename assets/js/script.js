@@ -41,7 +41,7 @@
 
 function searchforImage($result){
 
-		console.log($result);
+		//console.log($result);
 		var $imageList= $('.gallery a');
 
 		$(".gallery a").hide();
@@ -61,19 +61,17 @@ function searchforImage($result){
 		}
 
 
-					console.log($imageList);
+			//console.log($imageList);
 
 
 		for(var i = 0; i < $imageList.length; i++ ){
 
 			var $altTag = $imageList[i].innerHTML;
-			console.log($altTag);
 			var n = $altTag.search($result);
 
 		
 			if(n > -1){ // found something
 				
-				//console.log("now" + searchList.length);
 				//clears the search list
 				$searchList.push($imageList[i]);
 
@@ -92,7 +90,7 @@ function searchforImage($result){
 
 function printImageList($searchList){
 
-	console.log("Printing" + $searchList.length)
+		console.log("Printing " + $searchList.length)
 		
 
 
@@ -107,13 +105,22 @@ function printImageList($searchList){
 
 		for (var i=0; i < $searchList.length; i++)
 		{	
-			console.log($searchList[i]);
-			//var anchorTagOpen = "<a href='"
-			//$(anchorTagOpen).append();
-			//$('.gallery').append
-			$('.gallery').append('<img src="'+$searchList[i].src+ ">");
+			
+			//<a href=""><img src=""></a>
+			var photo = $searchList[i];
+			var link = "<a href='"; 
+			link += photo.href; 
+			link += "'>";
+			link += photo.innerHTML.trim();
+			link += "</a>"
+			console.log(link);
+
+
+		
+			$('.gallery').append(link);
 
 	}
+
 	
 }
 
