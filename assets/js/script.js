@@ -28,7 +28,7 @@
 
  		 else {
 
- 		 	console.log("The box is empty");
+ 		 	//console.log("The box is empty");
  		 	$(".gallery a").show();
  		 	$('.gallery').removeClass('flex-start');
  		 	$('.gallery').addClass('flex-container');
@@ -41,90 +41,84 @@
 
 function searchforImage($result){
 
-		var searchList = [ ];
-		var itemFound = false;
+		console.log($result);
+		var $imageList= $('.gallery a');
+
+		$(".gallery a").hide();
+		var $searchList = [ ];
 
 
+		console.log("Amount of Items in List Before Entering Value  " + $searchList.length);
+
+		if($searchList.length !== 0){
+			//Checks Search List before a value is entered.
+			for (var i = 0; i < $searchList.length; i++){
+						
+							$searchList.pop();
+							$(".gallery a").remove();
+
+			}
+		}
 
 
-
-
-		var $imageList= $('img');
+					console.log($imageList);
 
 
 		for(var i = 0; i < $imageList.length; i++ ){
 
-			var $altTag = $imageList[i].alt;
-
+			var $altTag = $imageList[i].innerHTML;
+			console.log($altTag);
 			var n = $altTag.search($result);
 
 		
 			if(n > -1){ // found something
-				itemFound = true;
-				$(".gallery a").hide();
-					console.log("now" + searchList.length);
+				
+				//console.log("now" + searchList.length);
+				//clears the search list
+				$searchList.push($imageList[i]);
 
-
-					if(searchList.length !== 0 ) {
-						for (var i = 0; i < searchList.length; i++)
-						$imageList.remove()	
-						searchList.pop();
-
-					}
-
-
-			} else {
-
-					if(searchList.length !== 0 ) {
-						for (var i = 0; i < searchList.length; i++)
-						searchList.pop();
-
-					}
-
-				searchList.push($imageList[i]);
-				//console.log(searchList);
-
-			}
-
-
+			} 
 
 
 		}// end of for loop to push images		
-		console.log("later" + searchList.length);
+		console.log("Search List " + $searchList.length);
 
 
-		printImageList(searchList);
-
+		printImageList($searchList);
 
 
 }
 
 
-function printImageList(searchList){
+function printImageList($searchList){
+
+	console.log("Printing" + $searchList.length)
+		
 
 
-		console.log("later2" + searchList.length);
-
-
-	for (var i=0; i < searchList.length; i++)
-	{
-
-		$(".flex-container").append('<img src="'+searchList[i].src+'">');
-
-
-	}
-
-		if(searchList.length < 4){
+		if($searchList.length < 4){
 					$('.gallery').removeClass('flex-container');
 					$('.gallery').addClass('flex-start');
-				}
-				else {
+		} else {
 
 					$('.gallery').addClass('flex-container');
 
-				}
+		}
+
+		for (var i=0; i < $searchList.length; i++)
+		{	
+			console.log($searchList[i]);
+			//var anchorTagOpen = "<a href='"
+			//$(anchorTagOpen).append();
+			//$('.gallery').append
+			$('.gallery').append('<img src="'+$searchList[i].src+ ">");
+
+	}
 	
 }
+
+
+
 
 
 
