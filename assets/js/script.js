@@ -22,8 +22,7 @@
  	//'
  		 var $result =  $('#search').val();	 
 
-		$result= $result.toLowerCase().trim();
-		console.log($result);
+		$result= $result.toLowerCase();
 
  		 if ($result !== ""){
  		 	searchforImage($result);
@@ -48,7 +47,7 @@ function searchforImage($result){
 
 		console.log($imageList);
 
-		$(".gallery a").hide();
+				$(".gallery a").hide();
 		var $searchList = [ ];
 
 
@@ -93,7 +92,6 @@ function printImageList($searchList){
 
 		console.log("Printing " + $searchList.length)
 		
-				$(".gallery a").remove();
 
 
 		if($searchList.length < 4){
@@ -127,7 +125,8 @@ function printImageList($searchList){
 
   lightbox.option({
       'resizeDuration': 200,
-      'wrapAround': true
+      'wrapAround': true,
+      'showImageNumberLabel': false
     })
 
 
