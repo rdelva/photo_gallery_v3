@@ -22,7 +22,7 @@
  	//'
  		 var $result =  $('#search').val();	 
 
-		$result= $result.trim();
+		$result= $result.toLowerCase().trim();
 
  		 if ($result !== ""){
  		 	searchforImage($result);
@@ -59,7 +59,6 @@ function searchforImage($result){
 
 		}
 
-		$(".gallery a").remove();
 
 
 		console.log("Search  List " + $searchList.length);
@@ -93,6 +92,7 @@ function printImageList($searchList){
 
 		console.log("Printing " + $searchList.length)
 		
+				$(".gallery a").remove();
 
 
 		if($searchList.length < 4){
@@ -124,36 +124,6 @@ function printImageList($searchList){
 
 
 
-
-
-
-/*
-		
-
-
-if ($textbox !== "") {
-
-	console.log("hi");
-
-	for(var i = 0; i < $imageList.length; i++ ){
-
-		if($imageList[i].alt.indexOf('$search') ){
-
-			var $test = $imageList[i].alt.indexOf('$search')
-			console.log("turn" + i);
-			console.log($imageList[i].alt);
-			console.log($test);
-
-		}
-	}	
-}	
-
-else {
-
-	console.log("ho");
-}
-
-*/
 
 
 
