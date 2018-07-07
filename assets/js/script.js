@@ -13,13 +13,16 @@
 //output new list onto screen
 
 
- 
+
 
 
  $('#search').on('keyup', function(){
- 		var $result =  $('#search').val();	 
 
-		$result= $.trim($result);
+
+ 	//'
+ 		 var $result =  $('#search').val();	 
+
+		$result= $result.trim();
 
  		 if ($result !== ""){
  		 	searchforImage($result);
@@ -28,40 +31,38 @@
 
  		 else {
 
- 		 	//console.log("The box is empty");
  		 	$(".gallery a").show();
  		 	$('.gallery').removeClass('flex-start');
  		 	$('.gallery').addClass('flex-container');
 
  		 }
 
- });
+});
 
 
 
 function searchforImage($result){
 
-		//console.log($result);
 		var $imageList= $('.gallery a');
+
+
 
 		$(".gallery a").hide();
 		var $searchList = [ ];
 
 
-		console.log("Amount of Items in List Before Entering Value  " + $searchList.length);
+		//Checks Search List before a value is entered to avoid repeated entries
 
-		if($searchList.length !== 0){
-			//Checks Search List before a value is entered.
-			for (var i = 0; i < $searchList.length; i++){
-						
-							$searchList.pop();
-							$(".gallery a").remove();
+		while($searchList.length > 0){
+					
+				$searchList.pop();
 
-			}
 		}
 
+		$(".gallery a").remove();
 
-			//console.log($imageList);
+
+		console.log("Search  List " + $searchList.length);
 
 
 		for(var i = 0; i < $imageList.length; i++ ){
@@ -79,7 +80,7 @@ function searchforImage($result){
 
 
 		}// end of for loop to push images		
-		console.log("Search List " + $searchList.length);
+		console.log("Search Built List " + $searchList.length);
 
 
 		printImageList($searchList);
@@ -113,9 +114,6 @@ function printImageList($searchList){
 			link += "'>";
 			link += photo.innerHTML.trim();
 			link += "</a>"
-			console.log(link);
-
-
 		
 			$('.gallery').append(link);
 
