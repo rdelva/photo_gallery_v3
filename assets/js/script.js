@@ -23,6 +23,7 @@
  		 var $result =  $('#search').val();	 
 
 		$result= $result.toLowerCase().trim();
+		console.log($result);
 
  		 if ($result !== ""){
  		 	searchforImage($result);
@@ -45,7 +46,7 @@ function searchforImage($result){
 
 		var $imageList= $('.gallery a');
 
-
+		console.log($imageList);
 
 		$(".gallery a").hide();
 		var $searchList = [ ];
@@ -124,8 +125,10 @@ function printImageList($searchList){
 
 
 
-
-
+  lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
 
 
 
