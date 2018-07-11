@@ -15,7 +15,7 @@
 
 
 
- $('#search').on('keyup', function(e){
+ $('#search').on('keydown', function(){
 
 
  	//'
@@ -53,7 +53,7 @@ function searchforImage($result){
 
 			if(found === -1 ) {
 
-				$(this).hide();
+				$(this).toggle();
 			} 
 		
 
