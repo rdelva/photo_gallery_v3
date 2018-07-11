@@ -15,7 +15,7 @@
 
 
 
- $('#search').on('keydown', function(){
+ $('#search').on('keyup', function(){
 
 
  	//'
@@ -30,7 +30,11 @@
 
  		 else {
 
- 		 	$('.gallery img').show();
+ 		 	$('.gallery a').show();
+ 		 	$('.gallery').addClass('flex-container');
+
+
+
 
  		 }
 
@@ -42,9 +46,14 @@
 
 function searchforImage($result){
 
+		$('.gallery').removeClass('flex-container');
+	 	$('.gallery a').addClass('gallery a');
 
 
-		$('.gallery img').each(function(index){
+
+
+
+		$('.gallery a').each(function(index){
 
 			var imageAlt = $(this).attr('alt');
 
