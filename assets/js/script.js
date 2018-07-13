@@ -47,10 +47,11 @@
 function searchforImage($result){
 
 		$('.gallery').removeClass('flex-container');
-	 	$('.gallery a').addClass('gallery a');
+	 	$('.gallery a').addClass('imagePadding');
 
 
 
+		//console.log(galleryList);
 
 
 		$('.gallery a').each(function(index){
@@ -58,15 +59,23 @@ function searchforImage($result){
 			var imageAlt = $(this).attr('alt');
 
 			//search for image
-			var found = imageAlt.search($result);
+			var found = imageAlt.indexOf($result);
+			console.log(found);
 
 			if(found === -1 ) {
 
-				$(this).toggle();
+				$(this).css('display', 'none');
+			}
+			else {
+				$(this).addClass('selected');
+
 			} 
 		
 
 		});
+
+	
+
 }
 
 

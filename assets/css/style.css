@@ -87,7 +87,7 @@ a:hover {
 		display: flex;
 		flex-wrap:wrap;
 		justify-content: space-between;
-	
+
 
 	}
 
@@ -119,21 +119,19 @@ a:hover {
 		width: 95%;
 	}
 
-	.imageMargins {
-		padding-right: 1em;
-		
-	}
 
-	
-	.gallery a {
-		padding-right:2.5%;
+	.gallery a{
+		/*padding-right:5%;*/
+		margin: 0 5% 5% 0;
+  flex-grow: 3;
 
 	}
 
-	.gallery a:nth-child(4n) {
-		padding-right:0;
+	/*.gallery a:nth-child(4n) {
+		/*padding-right:0;*/
 
-	}
+	} 
+
 
 
 
