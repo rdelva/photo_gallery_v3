@@ -31,7 +31,7 @@
  		 else {
 
  		 	$('.gallery a').show();
- 		 	$('.gallery').addClass('flex-container');
+ 		 	//$('.gallery').addClass('flex-container');
 
 
 
@@ -46,31 +46,26 @@
 
 function searchforImage($result){
 
-		$('.gallery').removeClass('flex-container');
-	 	$('.gallery a').addClass('imagePadding');
+		//$('.gallery').removeClass('flex-container');
+	 	//$('.gallery a').addClass('imagePadding');
 
 
 
-		//console.log(galleryList);
 
 
 		$('.gallery a').each(function(index){
 
-			var imageAlt = $(this).attr('alt');
+			//changes alt tags text to lowercase
+			var imageAlt = $(this).attr('alt').toLowerCase();
 
 			//search for image
 			var found = imageAlt.indexOf($result);
-			console.log(found);
 
 			if(found === -1 ) {
 
 				$(this).css('display', 'none');
 			}
-			else {
-				$(this).addClass('selected');
-
-			} 
-		
+		 
 
 		});
 

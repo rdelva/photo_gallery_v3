@@ -19,6 +19,16 @@ header {
 	clear:both;
 }
 
+.flex-container {
+		
+		display: flex;
+		flex-wrap:wrap;
+		justify-content: space-between;
+
+
+	}
+
+
 
 #search {
 
@@ -79,26 +89,6 @@ a:hover {
 	
 	}
 
-
-	
-
-	.flex-container {
-		
-		display: flex;
-		flex-wrap:wrap;
-		justify-content: space-between;
-
-
-	}
-
-
-
-	/*.flex-start {
- 		justify-content: flex-start;
-		align-content: flex-start;
-	}
-*/
-	
 
 	#search {
 
