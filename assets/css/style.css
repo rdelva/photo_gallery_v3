@@ -123,20 +123,13 @@ a:hover {
 	.gallery a{
 		/*padding-right:5%;*/
 		margin: 0 5% 5% 0;
-  flex-grow: 3;
+ 		 flex-grow: 3;
 
 	}
 
-	/*.gallery a:nth-child(4n) {
-		/*padding-right:0;*/
-
-	} 
+	
 
 
 
-
-	.border {
-		border: black 1px dashed;
-	}
 
 }
