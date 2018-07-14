@@ -5,14 +5,8 @@
 //looks at each photo
 // if alt tag has letter or word show it
 // if alt tag doesn't find it hide it
-
 //compare result item to each alt tag
 //if value matches put it in result list
-
-
-
-
-
 
 
  $('#search').on('keyup', function(){
@@ -67,7 +61,7 @@ function searchforImage($result){
       'resizeDuration': 200,
       'wrapAround': true,
       'showImageNumberLabel': false
-    })
+    });
 
 
 
