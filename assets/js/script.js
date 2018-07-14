@@ -31,10 +31,6 @@
  		 else {
 
  		 	$('.gallery a').show();
- 		 	//$('.gallery').addClass('flex-container');
-
-
-
 
  		 }
 
@@ -46,17 +42,10 @@
 
 function searchforImage($result){
 
-		//$('.gallery').removeClass('flex-container');
-	 	//$('.gallery a').addClass('imagePadding');
-
-
-
-
-
 		$('.gallery a').each(function(index){
 
 			//changes alt tags text to lowercase
-			var imageAlt = $(this).attr('alt').toLowerCase();
+			var imageAlt = $(this).attr('data-alt').toLowerCase();
 
 			//search for image
 			var found = imageAlt.indexOf($result);
