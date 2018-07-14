@@ -11,8 +11,6 @@
 
  $('#search').on('keyup', function(){
 
-
- 	//'
  		 var $result =  $('#search').val();	 
 
 		$result= $result.toLowerCase();
@@ -27,8 +25,6 @@
  		 	$('.gallery a').show();
 
  		 }
-
- 	
 
 });
 
@@ -51,9 +47,6 @@ function searchforImage($result){
 		 
 
 		});
-
-	
-
 }
 
 
